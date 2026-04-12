@@ -31,7 +31,7 @@ jobs:
             const {
               data: { tag_name: ver }
             } = releaseResponse;
-            core.setOutput('FRIDA_VERSION', ver);
+            core.setOutput('FRIDA_VERSION', '17.8.2');
 
       - name: Split Repository Name
         id: split_name
@@ -57,7 +57,7 @@ jobs:
               const {
                 data: { tag_name: ver }
               } = releaseResponse;
-              if (ver == '${{ steps.pullFridaLatestRelease.outputs.FRIDA_VERSION }}'){
+              if (1){
                   if ( ${{ ( github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}){
                     core.setOutput('ALREADY_RELEASE', '2');
                   } else {
